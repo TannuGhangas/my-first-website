@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Button That Lies 🔴</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #fff6f6;
+    }
+    h1 {
+      color: #ff0033;
+    }
+    button {
+      font-size: 20px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 12px;
+      background: #ff0033;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: #ff3366;
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚨 The Button That Lies 🚨</h1>
+  <button id="lieButton">DON’T PRESS</button>
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "😈 YOU LOSE!",
+      "🎉 +10 POINTS!",
+      "😂 Try again, silly!",
+      "👀 Why are you still pressing?",
+      "🔥 Epic Win!",
+      "💀 Oops… total fail."
+    ];
+
+    const button = document.getElementById("lieButton");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", () => {
+      const random = Math.floor(Math.random() * messages.length);
+      message.textContent = messages[random];
+    });
+  </script>
+</body>
+</html>
